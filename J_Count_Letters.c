@@ -1,12 +1,14 @@
 #include <stdio.h>
+#include <string.h>
 
 char s[10000001];
 int main()
 {
-    scanf("%s", s);
+    scanf("%s", &s);
     int freq[26] = {0};
+    int length = strlen(s);
 
-    for (int i = 0; s[i] != '\0'; i++)
+    for (int i = 0; i < length; i++)
     {
         if (s[i] >= 'a' && s[i] <= 'z')
         {
