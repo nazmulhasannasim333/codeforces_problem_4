@@ -19,17 +19,19 @@ int main()
     {
         if (s[i] == ' ' || s[i] == '\0')
         {
-            for (int j = i - 1; j >= start; j--)
+            int left = start, right = i - 1;
+            while (left < right)
             {
-                printf("%c", s[j]);
-            }
-            if (s[i] == ' ')
-            {
-                printf(" ");
+                char temp = s[left];
+                s[left] = s[right];
+                s[right] = temp;
+                left++;
+                right--;
             }
             start = i + 1;
         }
     }
 
+    printf("%s\n", s);
     return 0;
 }
