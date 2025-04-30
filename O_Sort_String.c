@@ -8,13 +8,13 @@ int main()
     scanf("%s", str);
     for (int i = 0; i < n - 1; i++)
     {
-        for (int j = 0; j < n - i - 1; j++)
+        for (int j = n - 1; j > i; j--)
         {
-            if (str[j] > str[j + 1])
+            if (str[j] < str[j - 1])
             {
                 char temp = str[j];
-                str[j] = str[j + 1];
-                str[j + 1] = temp;
+                str[j] = str[j - 1];
+                str[j - 1] = temp;
             }
         }
     }
